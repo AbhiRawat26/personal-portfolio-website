@@ -282,15 +282,24 @@ document
       .send("service_psgvd9m", "template_wye8xjr", {
         name: this.name.value,
         email: this.email.value,
+        subject: this.subject.value,
         message: this.message.value,
       })
       .then(
         function (response) {
           console.log("Email sent successfully", response);
+          document.getElementById("name").value = "";
+          document.getElementById("email").value = "";
+          document.getElementById("subject").value = "";
+          document.getElementById("message").value = "";
           // You can add code here to show a success message to the user
         },
         function (error) {
           console.error("Email sending failed", error);
+          document.getElementById("name").value = "";
+          document.getElementById("email").value = "";
+          document.getElementById("subject").value = "";
+          document.getElementById("message").value = "";
           // You can add code here to show an error message to the user
         }
       );
