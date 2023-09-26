@@ -288,6 +288,7 @@ document
       .then(
         function (response) {
           console.log("Email sent successfully", response);
+          alert("mail sent successfully");
           document.getElementById("name").value = "";
           document.getElementById("email").value = "";
           document.getElementById("subject").value = "";
